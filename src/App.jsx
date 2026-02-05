@@ -139,7 +139,22 @@ const ipasheetPhrases = {
   d: { phrase: "den, mad, bad, sad, hid", file: "Voiced_alveolar_plosive.ogg"},
   k: { phrase: "kin, cat, back, kick, lock", file: "Voiceless_velar_plosive.ogg"},
   g: { phrase: "go, bag, dog, flag, hug", file: "Voiced_velar_plosive.ogg"},
-  h: { phrase: "go, bag, dog, flag, hug", file: "Voiced_velar_plosive.ogg"},
+  ʔ: { phrase: "???", file: "Glottal_stop.ogg"},
+  m: { phrase: "man, ham, am, him", file: "Bilabial_nasal.ogg"},
+  n: { phrase: "nap, ten, sun, ban, pin", file: "Alveolar_nasal.ogg"},
+  ŋ: { phrase: "sing, long, bang, hung, ring", file: "Velar_nasal.ogg"},
+  ɲ: { phrase: "canyon, onion, lasagna", file: "Palatal_nasal.ogg"},
+  ɴ: { phrase: "???", file: "Uvular_nasal.ogg"},
+  B: { phrase: "???", file: "Bilabial_trill.ogg"},
+  r: { phrase: "red, try, very, around", file: "Alveolar_trill.ogg"},
+  R: { phrase: "???", file: "Uvular_trill.ogg"},
+  // ⱱ: { phrase: "???", file: "Labiodental_flap.ogg"},
+  ɾ: { phrase: "butter, ladder, city", file: "Alveolar_tap.ogg"},
+  ɽ	: { phrase: "???", file: "Retroflex_flap.ogg"},
+  ɸ: { phrase: "???", file: "Voiceless_bilabial_fricative.ogg"},
+
+
+
 }
 
 export default App;
