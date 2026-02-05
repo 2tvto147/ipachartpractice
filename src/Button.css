@@ -1,0 +1,53 @@
+.btn {
+  padding: 12px 30px;
+  border: 1px solid var(--color-2);
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+/* Variants */
+.btn-primary {
+  background: var(--color-2);
+  color: var(--color-6);
+}
+
+.btn-primary:hover {
+  background: var(--color-3);
+}
+
+.btn-secondary {
+  color: var(--color-2);
+}
+
+.btn-secondary:hover {
+  background: var(--color-2);
+  color: var(--color-6);
+}
+
+.btn-accent {
+  border-color: var(--color-4);
+  color: var(--color-4);
+}
+
+.btn-accent:hover {
+  background: var(--color-4);
+  color: var(--color-6);
+}
+
+/* Disabled */
+.btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Modifiers */
+.clear-btn {
+  padding: 12px 15px;
+  min-width: 50px;
+}
