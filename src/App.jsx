@@ -8,10 +8,14 @@ function App() {
   const [correctSymbol, setCorrectSymbol] = useState(null);
   const [choices, setChoices] = useState([]);
   const [feedback, setFeedback] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [history, setHistory] = useState([]);
+  const HISTORY_SIZE = 3;
 
   function getRandomSymbol() {
-  const symbols = Object.keys(ipasheetPhrases);
-  return symbols[Math.floor(Math.random() * symbols.length)];
+  const symbols = Object.keys(ipasheetPhrases).filter(s => !history.includes(s));
+  const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+  return symbol;
 }
 
 function getChoices(correct, count = 4) {
@@ -27,6 +31,15 @@ function startQuiz() {
   setChoices(getChoices(symbol));
   setFeedback("");
 
+  // Update history
+  setHistory(prev => {
+    const newHistory = [...prev, symbol];
+    if (newHistory.length > HISTORY_SIZE) {
+      newHistory.shift(); // remove oldest
+    }
+    return newHistory;
+  });
+
   const newAudio = new Audio(`/audio/${ipasheetPhrases[symbol].file}`);
   newAudio.play();
 }
@@ -41,8 +54,17 @@ function checkAnswer(choice) {
 
 function playSound() {
   if (!correctSymbol) return;
+  if (isPlaying) return;
 
-  new Audio(`/audio/${ipasheetPhrases[correctSymbol].file}`).play();
+  const audio = new Audio(`/audio/${ipasheetPhrases[correctSymbol].file}`);
+  setIsPlaying(true);
+
+  audio.play().catch(err => {
+    console.error("Audio failed to play:", err);
+    setIsPlaying(false); // allow retry if audio fails
+  });
+
+  audio.onended = () => setIsPlaying(false);
 }
 
   return (

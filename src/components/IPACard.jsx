@@ -12,8 +12,6 @@ export default function IPACard({ symbol, example, audioSrc }) {
         setIsPlaying(true);
         audio.play();
 
-        setIsPlaying(true);
-
         audio.play().catch(err => {
             console.error("Audio failed to play:", err);
             setIsPlaying(false); // allow retry if audio fails
