@@ -13,12 +13,14 @@
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   border: 2px solid #ccc;
   flex-shrink: 0;
+  margin-top: 5px;
 }
 
 .ipa-card:hover {
   transform: translateY(-4px);
   /* box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18); */
   border-color: #888;
+  /* outline: 2px solid #888; */
 }
 
 .ipa-symbol {
@@ -56,6 +58,7 @@
   /* grid-auto-flow: column; */
   margin-inline: auto;
   width: max-content;
+  /* padding: 16px; */
 }
 
 .ipa-scroll {
