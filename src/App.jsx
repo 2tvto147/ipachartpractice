@@ -80,6 +80,7 @@ function playSound() {
         />
       ))}
     </div> */}
+    <div className="ipa-scroll">
     <div className="ipa-grid">
       {Object.entries(ipasheetPhrases).map(([symbol, { phrase, file }]) => (
         <IPACard
@@ -89,6 +90,7 @@ function playSound() {
         audioSrc={`/audio/${file}`}
         />
         ))}
+        </div>
         </div>
 
         <div className="quiz-section">

@@ -12,6 +12,7 @@
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   border: 2px solid #ccc;
+  flex-shrink: 0;
 }
 
 .ipa-card:hover {
@@ -35,13 +36,6 @@
   text-align: center;
 }
 
-.ipa-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 120px);
-  gap: 16px;
-  justify-content: center;
-}
-
 .quiz-section {
   margin-top: 40px;
   text-align: center;
@@ -52,4 +46,28 @@
   justify-content: center;
   gap: 12px;
   margin-top: 16px;
+}
+
+.ipa-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 120px);
+  gap: 16px;
+  /* justify-content: center; */
+  /* grid-auto-flow: column; */
+  margin-inline: auto;
+  width: max-content;
+}
+
+.ipa-scroll {
+  overflow-x: auto;
+  scrollbar-width: thin; /* Firefox */
+}
+
+.ipa-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.ipa-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.4);
+  border-radius: 6px;
 }
